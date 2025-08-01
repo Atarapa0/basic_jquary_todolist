@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+@primary-font: 'Inter', sans-serif;
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-input {
+  display: none; // Varsayılan checkbox'ı gizle
+}
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.icon-checkmark {
+  width: 14px;
+  height: 14px;
+  fill: #fff;
+  opacity: 0; // Başlangıçta gizli
+  transition: opacity 0.3s ease;
+}
+
+// Checkbox işaretlendiğinde
+.checkbox-input:checked + .checkmark {
+  background-color: #3b66db;
+  border-color: #3b66db;
+}
+
+.checkbox-input:checked + .checkmark .icon-checkmark {
+  opacity: 1; // SVG'yi göster
+}
+
+// Görev tamamlandığında text'i çiz
+.checkbox-input:checked ~ .task-text {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+
+
